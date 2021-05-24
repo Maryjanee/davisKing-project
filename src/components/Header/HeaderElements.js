@@ -64,8 +64,11 @@ export const HeaderLink = styled(LinkR)`
   align-self:flex-start;
   margin:1rem 0;
   color:#fff;
-  @media screen and (max-width:768px){
 
+  &:active{
+    border-bottom:3px solid orange;
+  }
+  @media screen and (max-width:768px){
     margin:1rem auto;
   }
  
