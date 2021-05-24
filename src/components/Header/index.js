@@ -12,8 +12,8 @@ const Header = () => {
       <HeaderTextContainer>
         <h1>Davis King</h1>
         <p>A gospel singer and writer with a
-           specific <br/>
-           mandate to teach people through music as <br/> inspired by God.
+           specific
+           mandate to teach people through music as inspired by God.
         </p>
         <HeaderLink to="/discography">
           Get Music
