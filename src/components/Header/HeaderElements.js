@@ -41,10 +41,12 @@ p{
   align-items:center;
   margin-top:8rem;
   width:90%;
+  top:23%;
+
   
 
   h1{
-    font-size:2.8rem;
+    font-size:2.4rem;
   }
   p{
     font-size:1rem;
