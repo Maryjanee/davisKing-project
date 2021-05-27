@@ -1,8 +1,7 @@
 import React from 'react'
 import {BrowserRouter} from 'react-router-dom'
-import Header from './components/Header';
 import { createGlobalStyle } from 'styled-components'
-import Sidebar from './components/Sidebar';
+import Home from './pages';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -20,8 +19,7 @@ const App = () => {
   return (
     <BrowserRouter>
     <GlobalStyle/>
-        <Sidebar/>
-        <Header/>
+        <Home/>
     </BrowserRouter>
   )
 }
