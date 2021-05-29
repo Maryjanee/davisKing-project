@@ -3,25 +3,25 @@ import {FaBars} from 'react-icons/fa';
 
 import { Container, Nav, NavbarContainer, NavbarLogo, MobileIcon, NavItem, NavMenu, NavLink} from "./NavbarElements";
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
   return (
    <>
    <Nav>
    <Container>
      <NavbarContainer>
        <NavbarLogo to="/">davisKING</NavbarLogo>
-       <MobileIcon>
+       <MobileIcon onClick={toggle}>
          <FaBars/>
        </MobileIcon>
        <NavMenu>
            <NavItem>
-             <NavLink to="/home">Home</NavLink>
+             <NavLink to="/home" >Home</NavLink>
            </NavItem>
            <NavItem>
-             <NavLink to="/about">About</NavLink>
+             <NavLink to="/about" >About</NavLink>
            </NavItem>
            <NavItem>
-             <NavLink to="/discography">Discography</NavLink>
+             <NavLink to="/discography" >Discography</NavLink>
            </NavItem>
            <NavItem>
              <NavLink to="contact">Contact</NavLink>

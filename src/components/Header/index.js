@@ -1,13 +1,12 @@
 import React from 'react'
 // import { HeaderBackground, HeaderText, 
-//   HeaderImg, HeaderImgContainer, HeaderLink } from './HeaderElements';
-import { HeaderBackground, HeaderTextContainer, HeaderLink} from './HeaderElements';
+//   HeaderImg, HeaderImgContainer, ButtonLink } from './HeaderElements';
+import { HeaderBackground, HeaderTextContainer, ButtonLink} from './HeaderElements';
 import {Container} from '../NavBar/NavbarElements'
-import Navbar from '../NavBar' ;
 const Header = () => {
   return (
     <HeaderBackground>
-      <Navbar/>
+    
       <Container>
       <HeaderTextContainer>
         <h1>Davis King</h1>
@@ -15,9 +14,9 @@ const Header = () => {
            specific
            mandate to teach people through music as inspired by God.
         </p>
-        <HeaderLink to="/discography">
+        <ButtonLink to="/discography">
           Get Music
-        </HeaderLink>
+        </ButtonLink>
         
       </HeaderTextContainer>
       </Container>
