@@ -5,21 +5,20 @@ import {Link as LinkR} from "react-router-dom";
 
 
 export const HeaderBackground = styled.header `
-width: 100vw;
+width: 100%;
 height:100vh;
 background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(16, 5, 80, 0.90)), url(${headerImg});
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
-background-attachment: fixed;
 overflow:hidden;
 `
 
 export const HeaderTextContainer = styled.div `
 width:40%;
 color:#fff;
-position:absolute;
-top:30%;
+
+margin-top:15rem;
 display:flex;
 justify-content:space-between;
 flex-direction:column;
@@ -39,9 +38,9 @@ p{
 }
 @media screen and (max-width:768px){
   align-items:center;
-  margin-top:8rem;
+  margin-top:19rem;
   width:90%;
-  top:23%;
+  
 
   
 
@@ -57,7 +56,7 @@ p{
 }
 `
 
-export const HeaderLink = styled(LinkR)`
+export const ButtonLink = styled(LinkR)`
   background: #FFA700;
   border-radius:4px;
   padding:1rem 1.5rem;
