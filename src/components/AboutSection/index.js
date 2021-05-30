@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonLink } from '../Header/HeaderElements';
 import {Container  } from "../NavBar/NavbarElements";
 
-import { AboutSectionContainer, AboutContent, AboutImgContainer, 
+import { SectionContainer, AboutContent, AboutImgContainer, 
   AboutTextContent, AboutHeading,
    AboutText, BtnContainer } from './AboutElements';
 
@@ -10,7 +10,7 @@ import { AboutSectionContainer, AboutContent, AboutImgContainer,
 const HomeAboutSection = () => {
   return (
     <>
-      <AboutSectionContainer>
+      <SectionContainer>
         <Container>
         <AboutContent>
           <AboutImgContainer>
@@ -34,7 +34,7 @@ const HomeAboutSection = () => {
         </AboutContent>
         </Container>
 
-      </AboutSectionContainer>
+      </SectionContainer>
 
     </>
   )
