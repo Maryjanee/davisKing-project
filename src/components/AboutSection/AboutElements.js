@@ -1,17 +1,16 @@
 import styled from 'styled-components';
 import aboutImg from '../../assets/abtImage.jpg';
 
-export const AboutSectionContainer = styled.section`
-  height:auto;
+export const SectionContainer = styled.section`
   background:#1A022B;
   width:100%;
   padding:2rem 0 5rem 0;
+  @media(min-width:992px){
+    height:100vh;
+  }
 
 `
-
-
 export const AboutContent = styled.div`
-
  margin:0 auto;
  padding-top:4rem;
  width:100%;
@@ -45,7 +44,6 @@ background: linear-gradient(
       flex:1;
       background: url(${aboutImg}) no-repeat center;
       height:auto;
-      
       background-size:contain;
     }
 
