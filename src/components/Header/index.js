@@ -1,6 +1,4 @@
 import React from 'react'
-// import { HeaderBackground, HeaderText, 
-//   HeaderImg, HeaderImgContainer, ButtonLink } from './HeaderElements';
 import { HeaderBackground, HeaderTextContainer, ButtonLink} from './HeaderElements';
 import {Container} from '../NavBar/NavbarElements'
 const Header = () => {
