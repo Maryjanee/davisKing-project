@@ -11271,6 +11271,16 @@
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
+"typeface-poppins@^1.1.13":
+  "integrity" "sha512-VLNaET8kK7M3gPGjtKhr4/Iw6aseM2FLdiEGevlqXWD9b8QlzqZC4ro7sP78L9HJnOo2SUVvwJUeCn82gBcNqw=="
+  "resolved" "https://registry.npmjs.org/typeface-poppins/-/typeface-poppins-1.1.13.tgz"
+  "version" "1.1.13"
+
+"typeface-quicksand@^1.1.13":
+  "integrity" "sha512-sStzisPEpHfgPDE7EQvaDj9j5kxF56xeJgVc/8F2cchmI1IeuQ5ZE3ufTchSSpKbGRddgjgfWGUyjb7RqtJORA=="
+  "resolved" "https://registry.npmjs.org/typeface-quicksand/-/typeface-quicksand-1.1.13.tgz"
+  "version" "1.1.13"
+
 "unicode-canonical-property-names-ecmascript@^1.0.4":
   "integrity" "sha512-jDrNnXWHd4oHiTZnx/ZG7gtUTVp+gCcTTKr8L0HjlwphROEW3+Him+IpvC+xcJEFegapiMZyZe02CyuOnRmbnQ=="
   "resolved" "https://registry.npmjs.org/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz"
