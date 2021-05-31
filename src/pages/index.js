@@ -1,5 +1,6 @@
 import React,{useState}from 'react'
 import HomeAboutSection from '../components/AboutSection';
+import Featured from '../components/FeaturedHome';
 import Header from '../components/Header';
 
 import Navbar from '../components/NavBar';
@@ -17,6 +18,7 @@ const Home = () => {
       <Navbar toggle={toggle}/>
       <Header/>
       <HomeAboutSection/>
+      <Featured/>
       
        
     </>
