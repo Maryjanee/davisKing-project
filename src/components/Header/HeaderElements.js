@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-import headerImg from '../../assets/headerimg.jpg'
+
 import {Link as LinkR} from "react-router-dom";
 
 
 
-export const HeaderBackground = styled.header `
-width: 100%;
-height:100vh;
-background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(16, 5, 80, 0.90)), url(${headerImg});
-background-size: cover;
-background-position: center center;
-background-repeat: no-repeat;
-overflow:hidden;
+export const ImageBackground = styled.div `
+  width: 100%;
+  height:100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(16, 5, 80, 0.90)),
+   url(${props => props.bgImg});
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow:hidden;
 `
+
 
 export const HeaderTextContainer = styled.div `
 width:40%;
@@ -62,7 +64,6 @@ export const ButtonLink = styled(LinkR)`
   padding:1rem 1.5rem;
   width:10rem;
   text-align:center;
-  align-self:flex-start;
   margin:1rem 0;
   color:#fff;
 

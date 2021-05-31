@@ -1,12 +1,13 @@
 import React from 'react'
-import { HeaderBackground, HeaderTextContainer, ButtonLink} from './HeaderElements';
+import headerImg from '../../assets/headerimg.jpg'
+import { ImageBackground, HeaderTextContainer, ButtonLink} from './HeaderElements';
 import {Container} from '../NavBar/NavbarElements'
 const Header = () => {
   return (
-    <HeaderBackground>
+    <ImageBackground bgImg={headerImg}>
     
       <Container>
-      <HeaderTextContainer>
+      <HeaderTextContainer >
         <h1>Davis King</h1>
         <p>A gospel singer and writer with a
            specific
@@ -18,7 +19,7 @@ const Header = () => {
         
       </HeaderTextContainer>
       </Container>
-    </HeaderBackground>
+    </ImageBackground>
       
   )
 }
