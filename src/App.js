@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration:none;
     display:block;
   }
+  .featuredBtn {
+    margin-left:auto;
+    margin-right:2rem;
+  }
   `
 const App = () => {
   return (
