@@ -1,5 +1,6 @@
 import React,{useState}from 'react'
 import HomeAboutSection from '../components/AboutSection';
+import Countdown from '../components/CountDownTimer/';
 import Featured from '../components/FeaturedHome';
 import Header from '../components/Header';
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Header/>
       <HomeAboutSection/>
       <Featured/>
+      <Countdown/>
       
        
     </>
