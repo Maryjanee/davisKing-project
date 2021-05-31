@@ -6,7 +6,7 @@ export const SectionContainer = styled.section`
   width:100%;
   padding:2rem 0 5rem 0;
   @media(min-width:992px){
-    height:100vh;
+    height:auto;
   }
 
 `
