@@ -1,7 +1,7 @@
 import {Link as LinkR} from "react-router-dom";
 import styled from "styled-components";
 
-export const FeaturedHeading = styled.h2 `
+export const Heading = styled.h2 `
     font-size:2rem;
     color:white;
     width: 90%;

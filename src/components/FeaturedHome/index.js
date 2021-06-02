@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonLink } from '../Header/HeaderElements';
 import { SectionContainer } from "../../components/AboutSection/AboutElements";
-import { FeaturedHeading, FeaturedGrid, FeaturedLink, FeaturedImage } from "../FeaturedHome/FeaturedItems";
+import { Heading, FeaturedGrid, FeaturedLink, FeaturedImage } from "../FeaturedHome/FeaturedItems";
 import Kaa from '../../assets/kaa.jpg';
 import Gbeyo from '../../assets/gbeyo.png';
 import Olufe from '../../assets/olufe.jpg';
@@ -11,9 +11,9 @@ const Featured = () => {
   return (
     <>
     <SectionContainer>
-      <FeaturedHeading>
+      <Heading>
         Featured Music
-      </FeaturedHeading>
+      </Heading>
       <FeaturedGrid>
           <FeaturedLink>
             <FeaturedImage src={Kaa} alt="kaa-album-art"/>
