@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  li{
+    list-style:none;
+  }
 
   a{
     text-decoration:none;
@@ -18,6 +21,11 @@ const GlobalStyle = createGlobalStyle`
     margin-left:auto;
     margin-right:2rem;
   }
+
+  .footer-section{
+    padding:2rem 0;
+  }
+
   `
 const App = () => {
   return (
