@@ -1,7 +1,9 @@
 import React,{useState}from 'react'
 import HomeAboutSection from '../components/AboutSection';
+import Contact from '../components/Contact';
 import Countdown from '../components/CountDownTimer/';
 import Featured from '../components/FeaturedHome';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 import Navbar from '../components/NavBar';
@@ -15,12 +17,14 @@ const Home = () => {
   }
   return (
     <>
-      <Sidebar isOpen={isOpen}toggle={toggle}/>
+      <Sidebar isOpen={isOpen} toggle={toggle}/>
       <Navbar toggle={toggle}/>
       <Header/>
       <HomeAboutSection/>
       <Featured/>
       <Countdown/>
+      <Contact/>
+      <Footer/>
       
        
     </>
