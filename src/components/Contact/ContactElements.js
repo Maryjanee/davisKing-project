@@ -84,8 +84,13 @@ export const FormGrid = styled.div`
     .last-name {grid-area: last;}
     .email {grid-area: email;}
     .phone{grid-area: phone;}
-    .message{grid-area: message; width:90%}
-
+    .message{grid-area: message; width:90%; }
+  #message{border-radius:.2rem;}
+  #message:focus{
+    outline: none;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+  }
   }
 `
 export const ContactItem = styled.div`
