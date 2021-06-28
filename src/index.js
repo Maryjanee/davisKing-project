@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
+import ScrollToTop from "./ScrollToTop";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 require('typeface-poppins')
+
 
 ReactDOM.render(
   <React.StrictMode>
