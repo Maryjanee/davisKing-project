@@ -48,3 +48,15 @@ export const MusicTitle = styled.p`
 export const PlayIcon = styled.img`
 width:2.5rem;
 `;
+
+export const BgTitle = styled.h1`
+  text-transform: uppercase;
+  margin:18rem 5rem 10rem 5rem;
+  
+  color:#fff;
+  font-size:2rem;
+  @media(min-width:768px){
+    font-size:5rem;
+    margin:18rem 0 10rem 0;
+  }
+`
