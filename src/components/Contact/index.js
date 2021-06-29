@@ -1,135 +1,195 @@
-import React, {useState} from 'react'
-import { SectionContainer } from '../AboutSection/AboutElements';
-import {ContactContentContainer,ContactTextAndSocial, ContactText,
-   SocialLinks,ContactMailContainer , ContactMail, ContactForm,ContactTextArea,
-    ContactItem,SocialMediaIconContainer,SocialMediaIcon,MailContainer,Email,FormGrid, ContactItemLabel,ContactInput,ContactSubmitBtn } from '../../components/Contact/ContactElements';
-import { Heading } from '../FeaturedHome/FeaturedItems';
-import facebook from '../../assets/facebook.svg';
-import twitter from '../../assets/twitter.svg';
-import instagram from '../../assets/instagram.svg';
-import youtube from '../../assets/youtube.svg';
-import mail from '../../assets/mail.svg';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { SectionContainer } from "../SiteWideComponents/AboutSection/AboutElements";
+import {
+  ContactContentContainer,
+  ContactTextAndSocial,
+  ContactText,
+  ContactMailContainer,
+  ContactMail,
+  ContactForm,
+  ContactTextArea,
+  ContactItem,
+  SocialMediaIcon,
+  MailContainer,
+  Email,
+  FormGrid,
+  ContactItemLabel,
+  ContactInput,
+  ContactSubmitBtn,
+} from "../../components/Contact/ContactElements";
+import { Heading } from "../FeaturedHome/FeaturedItems";
 
+import mail from "../../assets/mail.svg";
+import SocialMedia from "../../components/SiteWideComponents/SocialLinks/";
 
 const Contact = () => {
- const [buttonText, setButtonText] = useState('Submit');
-
- const handleSubmit = async (e) =>{
-   e.preventDefault();
-   setButtonText("Sending...");
-   const { first,last, email, phone, message } = e.target.elements;
-   let details = {
-    firstName: first.value,
-    lastName: last.value,
-    email: email.value,
-    phone: phone.value,
-    message: message.value,
+  let history = useHistory();
+  const INITIAL_FORM = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
   };
-  let response = await fetch("http://localhost:5000/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(details),
-  });
-  setButtonText("Sent");
-  let result = await response.json();
-  alert(result.status);
-  setButtonText("Submit");
- }
+
+  const INITIALCONFIRMATION = {
+    confirmationHeading: "",
+    confirmationText: "",
+  };
+
+  const [buttonText, setButtonText] = useState("Send Email");
+  const [formDetails, setFormDetails] = useState(INITIAL_FORM);
+  const { firstName, lastName, email, phone, message } = formDetails;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormDetails((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const resetForm = () => {
+    setFormDetails(INITIAL_FORM);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setButtonText("Sending...");
+    const dataToSubmit = {
+      name: `${firstName} ${lastName}`,
+      email,
+      phone,
+      message,
+    };
+
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/send",
+      data: {
+        dataToSubmit,
+      },
+    }).then((response) => {
+      if (response.data.status === "Ok") {
+    
+        history.push({
+          pathname: "/confirmation",
+          state: { headingText: "Thanks! Your message was sent.", text: "I will get back to you really soon!" },
+        });
+        setButtonText("Send");
+        resetForm();
+      } else if (response.data.status === "Failed") {
+        
+        history.push({
+          pathname: "/confirmation",
+          state: {
+            headingText: "Message Sending Failed!",
+            text: "An error occurred and the form wasn't submitted.",
+          },
+        });
+        setButtonText("Send");
+        resetForm();
+      }
+    });
+  };
+
   return (
     <>
-    <SectionContainer>
-      <Heading>
-        Contact
-      </Heading>
-      <ContactContentContainer>
-        <ContactTextAndSocial>
-          <ContactText>
-            Do you have booking enquires or 
-            would you love a chat? I would absolutely
-            love to hear from you.
-          </ContactText>
-          <SocialLinks>
-                <SocialMediaIconContainer>
-                    <SocialMediaIcon src={facebook}/>
-                </SocialMediaIconContainer>
+      <SectionContainer id="contact">
+        <Heading>Contact</Heading>
+        <ContactContentContainer>
+          <ContactTextAndSocial>
+            <ContactText>
+              Do you have booking enquires or would you love a chat? I would
+              absolutely love to hear from you.
+            </ContactText>
+            <SocialMedia />
 
-              <SocialMediaIconContainer>
-                  <SocialMediaIcon src={instagram}/>
-              </SocialMediaIconContainer>
-
-              <SocialMediaIconContainer>
-                  <SocialMediaIcon src={twitter}/>
-              </SocialMediaIconContainer>
-
-              <SocialMediaIconContainer>
-                  <SocialMediaIcon src={youtube}/>
-              </SocialMediaIconContainer>
-         </SocialLinks>
-          <ContactMailContainer>
-            <ContactMail>
+            <ContactMailContainer>
+              <ContactMail>
                 <MailContainer>
-                    <SocialMediaIcon src={mail}/>
+                  <SocialMediaIcon src={mail} />
                 </MailContainer>
-                    <Email>
-                      hello@davisking.com
-                    </Email>
-                </ContactMail>
+                <Email>davisking2@gmail.com</Email>
+              </ContactMail>
 
-                <ContactMail>
-                  <MailContainer>
-                        <SocialMediaIcon src={mail}/>
-                  </MailContainer>
-                      <Email>
-                        hello@davisking.com
-                      </Email>
-                </ContactMail>
-          </ContactMailContainer>
-
-        </ContactTextAndSocial>
-        <ContactForm onSubmit={handleSubmit}>
-          <FormGrid>
+              <ContactMail>
+                <MailContainer>
+                  <SocialMediaIcon src={mail} />
+                </MailContainer>
+                <Email>info@thedavisking.com</Email>
+              </ContactMail>
+            </ContactMailContainer>
+          </ContactTextAndSocial>
+          <ContactForm onSubmit={handleSubmit}>
+            <FormGrid>
               <ContactItem className="first-name">
-                  <ContactItemLabel htmlFor="first">
-                    First Name
-                  </ContactItemLabel>
-                  <ContactInput type="text" id="first" required/>
+                <ContactItemLabel htmlFor="firstName">
+                  First Name
+                </ContactItemLabel>
+                <ContactInput
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={firstName}
+                  required
+                  onChange={handleChange}
+                />
               </ContactItem>
               <ContactItem className="last-name">
-                  <ContactItemLabel htmlFor="last">
-                    Last Name
-                  </ContactItemLabel>
-                  <ContactInput type="text" id="last" required/>
+                <ContactItemLabel htmlFor="lastName">
+                  Last Name
+                </ContactItemLabel>
+                <ContactInput
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={lastName}
+                  required
+                  onChange={handleChange}
+                />
               </ContactItem>
               <ContactItem className="email">
-                  <ContactItemLabel htmlFor="email">
-                    Email
-                  </ContactItemLabel>
-                  <ContactInput type="email" id="email" required/>
+                <ContactItemLabel htmlFor="email">Email</ContactItemLabel>
+                <ContactInput
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  required
+                  onChange={handleChange}
+                />
               </ContactItem>
               <ContactItem className="phone">
-                  <ContactItemLabel htmlFor="phone">
-                    Phone
-                  </ContactItemLabel>
-                  <ContactInput type="text" id="phone" required/>
+                <ContactItemLabel htmlFor="phone">Phone</ContactItemLabel>
+                <ContactInput
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  required
+                  onChange={handleChange}
+                />
               </ContactItem>
               <ContactItem className="message">
-                  <ContactItemLabel htmlFor="message">
-                        Message
-                  </ContactItemLabel>
-                <ContactTextArea id="message">
-
-                </ContactTextArea>
+                <ContactItemLabel htmlFor="message">Message</ContactItemLabel>
+                <ContactTextArea
+                  id="message"
+                  value={message}
+                  name="message"
+                  required
+                  onChange={handleChange}
+                ></ContactTextArea>
               </ContactItem>
             </FormGrid>
             <ContactSubmitBtn type="submit">{buttonText}</ContactSubmitBtn>
-        </ContactForm>
-      </ContactContentContainer>
-    </SectionContainer>
-      
+          </ContactForm>
+        </ContactContentContainer>
+      </SectionContainer>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
