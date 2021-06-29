@@ -1,6 +1,6 @@
 import React from 'react';
-import { ButtonLink } from '../Header/HeaderElements';
-import { SectionContainer } from "../../components/AboutSection/AboutElements";
+import { ButtonLink } from '../SiteWideComponents/Header/HeaderElements';
+import { SectionContainer } from "../../components/SiteWideComponents/AboutSection/AboutElements";
 import { Heading, FeaturedGrid, FeaturedLink, FeaturedImage } from "../FeaturedHome/FeaturedItems";
 import Kaa from '../../assets/kaa.jpg';
 import Gbeyo from '../../assets/gbeyo.png';
