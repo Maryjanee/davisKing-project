@@ -50,7 +50,7 @@ width:2.5rem;
 `;
 
 export const BgTitle = styled.h1`
-  text-transform: uppercase;
+ 
   margin:18rem 5rem 10rem 5rem;
   
   color:#fff;
