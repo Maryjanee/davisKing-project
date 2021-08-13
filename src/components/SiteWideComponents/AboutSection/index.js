@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonLink } from '../Header/HeaderElements';
 import {Container  } from "../NavBar/NavbarElements";
+import { HashLink } from 'react-router-hash-link';
 
 import { SectionContainer, AboutContent, AboutImgContainer, 
   AboutTextContent, AboutHeading,
@@ -26,8 +27,15 @@ const HomeAboutSection = () => {
               Percy Paul, Michael Jackson, Smokey Robinson etc.
             </AboutText>
             <BtnContainer>
-              <ButtonLink>More About Me</ButtonLink>
-              <ButtonLink>Contact</ButtonLink>
+              <ButtonLink to="/about">More About Me</ButtonLink>
+              <ButtonLink >
+                <HashLink
+                className="contact"
+                 exact 
+                  to="/home#contact"
+                >
+                  Contact
+                </HashLink></ButtonLink>
             </BtnContainer>
           
           </AboutTextContent>

@@ -12,19 +12,19 @@ import youtube from "../../../assets/youtube.svg";
 const SocialMedia = () => {
   return (
     <SocialLinks>
-      <SocialMediaIconContainer>
+      <SocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
         <SocialMediaIcon src={facebook} />
       </SocialMediaIconContainer>
 
-      <SocialMediaIconContainer>
+      <SocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
         <SocialMediaIcon src={instagram} />
       </SocialMediaIconContainer>
 
-      <SocialMediaIconContainer>
+      <SocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
         <SocialMediaIcon src={twitter} />
       </SocialMediaIconContainer>
 
-      <SocialMediaIconContainer>
+      <SocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
         <SocialMediaIcon src={youtube} />
       </SocialMediaIconContainer>
     </SocialLinks>

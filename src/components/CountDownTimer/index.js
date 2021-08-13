@@ -78,7 +78,7 @@ const Countdown = () => {
               <TimerCountText>Seconds</TimerCountText>
             </TimerCounter>
           </CountDownTimer>
-          <ButtonLink>View Tracks</ButtonLink>
+          <ButtonLink to="/discography">View Tracks</ButtonLink>
         </CountDownContentContainer>
       </ImageBackground>
     </>

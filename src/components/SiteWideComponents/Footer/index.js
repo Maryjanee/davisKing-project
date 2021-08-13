@@ -45,19 +45,19 @@ const Footer = () => {
 
          </FooterNav>
          <FooterSocialLinks>
-                <FooterSocialMediaIconContainer>
+                <FooterSocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
                     <FooterSocialMediaIcon  src={facebook}/>
                 </FooterSocialMediaIconContainer>
 
-              <FooterSocialMediaIconContainer>
+              <FooterSocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
                   <FooterSocialMediaIcon src={instagram}/>
               </FooterSocialMediaIconContainer>
 
-              <FooterSocialMediaIconContainer>
+              <FooterSocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
                   <FooterSocialMediaIcon src={twitter}/>
               </FooterSocialMediaIconContainer>
 
-              <FooterSocialMediaIconContainer>
+              <FooterSocialMediaIconContainer to="https://www.youtube.com/user/davisking4u/">
                   <FooterSocialMediaIcon src={youtube}/>
               </FooterSocialMediaIconContainer>
          </FooterSocialLinks>

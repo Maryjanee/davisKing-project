@@ -112,14 +112,14 @@ const Contact = () => {
                 <MailContainer>
                   <SocialMediaIcon src={mail} />
                 </MailContainer>
-                <Email>davisking2@gmail.com</Email>
+                <Email label="davisking2@gmail.com" mailto="mailto:davisking2@gmail.com" >davisking2@gmail.com</Email>
               </ContactMail>
 
               <ContactMail>
                 <MailContainer>
                   <SocialMediaIcon src={mail} />
                 </MailContainer>
-                <Email>info@thedavisking.com</Email>
+                <Email label="info@thedavisking.com" mailto="mailto:info@thedavisking.com" >info@thedavisking.com</Email>
               </ContactMail>
             </ContactMailContainer>
           </ContactTextAndSocial>

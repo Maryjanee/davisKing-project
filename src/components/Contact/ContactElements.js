@@ -40,6 +40,7 @@ export const SocialMediaIconContainer = styled(LinkR)`
 
 export const SocialMediaIcon = styled.img`
   width: 1rem;
+  margin-right:1rem
 `;
 
 export const ContactMail = styled.div`
@@ -49,10 +50,20 @@ export const ContactMail = styled.div`
   margin: 1rem 0;
 `;
 
-export const Email = styled.p`
-  font-size: 16px;
-  margin-left: 1rem;
-`;
+
+export const Email = ({ mailto, label }) => {
+  return (
+      <LinkR
+          to='#'
+          onClick={(e) => {
+              window.location = mailto;
+              e.preventDefault();
+          }}
+      >
+          {label}
+      </LinkR>
+  );
+};
 
 export const MailContainer = styled.div``;
 
