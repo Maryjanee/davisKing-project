@@ -16,7 +16,7 @@ export const MusicCardContainer = styled.div``;
 export const MusicCard = styled.div`
     min-height:400px;
     background:green;
-    position relative;
+    position: relative;
     border-radius:.5rem;
     background-image: url(${props => props.bgImg});
    background-size: cover;
