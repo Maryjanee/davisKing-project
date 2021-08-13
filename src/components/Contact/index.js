@@ -67,7 +67,7 @@ const Contact = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:5000/send",
+      url: "https://davisking-server.herokuapp.com/send",
       data: {
         dataToSubmit,
       },
